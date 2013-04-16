@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            description="This is a ASTClone Action Set"
+            id="br.ufla.dcc.plugin.astcloneActionSet"
+            label="ASTClone Action Set"
+            visible="true">
+         <action
+               class="br.ufla.dcc.plugin.view.action.ASTCloneActionDelegate"
+               icon="icons/run.png"
+               id="br.ufla.dcc.plugin.astcloneAction"
+               label="Execute ASTClone"
+               style="push"
+               toolbarPath="Normal"
+               tooltip="Run ASTClone Analysis">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="br.ufla.dcc.plugin.view.views.ASTCloneView"
+            icon="icons/astcloneView.png"
+            id="br.ufla.dcc.plugin.ASTClone.clonesView"
+            name="Clones View"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         id="br.ufla.dcc.plugin.view.highASTCloneMarker"
+         name="AST Clone Marker"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="false">
+      </persistent>
+   </extension>
+   
+  <!-- Início -->
+  <!-- this changes the marker image in the editor marker  -->
+   <extension point="org.eclipse.ui.editors.annotationTypes">
+      <type markerType="br.ufla.dcc.plugin.view.highASTCloneMarker"
+            name="br.ufla.dcc.plugin.view.highASTCloneMarkerAnnotation">
+      </type>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.editors.markerAnnotationSpecification">
+      <specification
+            annotationType="br.ufla.dcc.plugin.view.highASTCloneMarkerAnnotation"
+            colorPreferenceKey="myAppIndicationColor"
+            colorPreferenceValue="0,100,0"
+            highlightPreferenceKey="myAppHighlighting"
+            icon="icons/markerInformation.png"
+            includeOnPreferencePage="true"
+            label="br.ufla.dcc.plugin.view.highASTCloneMarkerAnnotationSpecification"
+            overviewRulerPreferenceKey="myAppIndicationInOverviewRuler"
+            overviewRulerPreferenceValue="true"
+            presentationLayer="3"
+            showInNextPrevDropdownToolbarAction="false"
+            textPreferenceKey="myAppIndication"
+            textPreferenceValue="true"
+            verticalRulerPreferenceKey="myAppIndicationInVerticalRuler"
+            verticalRulerPreferenceValue="true">
+      </specification>
+   </extension>
+	<!-- Fim -->
+    
+   <extension
+         id="br.ufla.dcc.plugin.view.selectedASTCloneMarker"
+         name="Selected Clone Marker"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.bookmark">
+      </super>
+      <persistent
+            value="false">
+      </persistent>
+   </extension>
+   
+   	<!-- Início -->
+    <!-- this changes the marker image in the editor marker  -->
+   <extension point="org.eclipse.ui.editors.annotationTypes">
+      <type markerType="br.ufla.dcc.plugin.view.selectedASTCloneMarker"
+            name="br.ufla.dcc.plugin.view.selectedASTCloneMarkerAnnotation">
+      </type>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.editors.markerAnnotationSpecification">
+      <specification
+            annotationType="br.ufla.dcc.plugin.view.selectedASTCloneMarkerAnnotation"
+            colorPreferenceKey="myAppIndicationColor"
+            colorPreferenceValue="255,0,0"
+            highlightPreferenceKey="myAppHighlighting"
+            icon="icons/markerSelected.png"
+            includeOnPreferencePage="true"
+            label="br.ufla.dcc.plugin.view.selectedASTCloneMarkerAnnotationSpecification"
+            overviewRulerPreferenceKey="myAppIndicationInOverviewRuler"
+            overviewRulerPreferenceValue="true"
+            presentationLayer="3"
+            showInNextPrevDropdownToolbarAction="false"
+            textPreferenceKey="myAppIndication"
+            textPreferenceValue="true"
+            verticalRulerPreferenceKey="myAppIndicationInVerticalRuler"
+            verticalRulerPreferenceValue="true">
+      </specification>
+   </extension>
+	<!-- Fim -->
+
+</plugin>

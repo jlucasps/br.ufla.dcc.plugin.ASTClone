@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Plugin DCC UFLA
+Bundle-SymbolicName: br.ufla.dcc.plugin.ASTClone;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: br.ufla.dcc.plugin.Activator
+Bundle-Vendor: jlucasps
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.6.0",
+ org.eclipse.jdt.core;bundle-version="3.6.1",
+ org.eclipse.ui.ide;bundle-version="3.6.1",
+ org.eclipse.contribution.visualiser;bundle-version="2.2.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ libs/log4j-1.2.16.jar,
+ libs/antlr-3.0.1.jar,
+ libs/jccd-1.0.6.jar
